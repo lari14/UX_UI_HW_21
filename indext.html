@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="css/index.css"></script>
 <!--Website title-->
         <title>TheHobSpot.com</title>
-  </head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      </head>
 
    <body>
 <!--Website Logo/Name-->
@@ -14,7 +19,6 @@
      <nav>
       <ul>
         <li><a href="#">All Hobbies</a></li>
-        <li><a href="#">Try a random hobby</a></li>
         <li><a href="#">Help</a></li>
       </ul>
      </nav>
@@ -22,18 +26,57 @@
      <div class="heroimg">
        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Chess_Banner.jpg" alt="chess set banner" width="100%" height="300px">
      </div>
-<!--Side Nav-->
-     <div class="sidenav">
-       <ul>
-         <li><a href="#">How to get Started</a></li>
-         <li><a href="#">Tips for practive and improving</a></li>
-         <li><a href="#">Related Hobbies</a></li>
-       </ul>
-     </div>
 <!--Hobbie Title-->
      <div class="pagecontent">
        <h1>Chess</h1>
        <p>Chess is a board game played between two players. It is sometimes called Western chess or international chess to distinguish it from related games such as xiangqi and shogi</p>
      </div>
+<!--Resources-->     
+<div class="w3-container">
+  <h3>Resources</h3>
+
+  <div class="w3-row">
+    <a href="javascript:void(0)" onclick="openCity(event, 'London');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">How to get started</div>
+    </a>
+    <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Tips for practicing and improving</div>
+    </a>
+    <a href="javascript:void(0)" onclick="openCity(event, 'Tokyo');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Related Hobbies</div>
+    </a>
+  </div>
+
+  <div id="London" class="w3-container city" style="display:none">
+    <h2>How to get started</h2>
+    <p>Chess is a two player game</p>
+  </div>
+
+  <div id="Paris" class="w3-container city" style="display:none">
+    <h2>Tips for practicing and improvig</h2>
+    <p>playing online games</p> 
+  </div>
+
+  <div id="Tokyo" class="w3-container city" style="display:none">
+    <h2>Related Hobbies</h2>
+    <p>checkers</p>
+  </div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-border-blue", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-border-blue";
+}
+</script>
    </body>
 </html>
